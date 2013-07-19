@@ -41,4 +41,6 @@ compile
 app.info
 coverage_report
 
-
+# Tests
+/tests/test.bin
+/tests/test.txt

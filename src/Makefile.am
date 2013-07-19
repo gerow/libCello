@@ -9,6 +9,7 @@ libCello_la_SOURCES = \
   File.c \
   Format.c \
   Function.c \
+  Go.c \
   Lambda.c \
   List.c \
   Map.c \
@@ -23,7 +24,7 @@ libCello_la_SOURCES = \
   
 libCello_la_CPPFLAGS = -I$(top_srcdir)/include
 libCello_la_CFLAGS = -std=gnu99 -Wall -Wextra -Wno-unused
-libCello_la_LDFLAGS = -lm
+libCello_la_LDFLAGS = -lm -lpthread
 
 include_HEADERS = $(top_srcdir)/include/Cello.h
 
@@ -38,6 +39,7 @@ pkginclude_HEADERS = \
   $(top_srcdir)/include/Format.h \
   $(top_srcdir)/include/Function.h \
   $(top_srcdir)/include/FunctionAuto.h \
+  $(top_srcdir)/include/Go.h \
   $(top_srcdir)/include/Lambda.h \
   $(top_srcdir)/include/LambdaCurry.h \
   $(top_srcdir)/include/List.h \

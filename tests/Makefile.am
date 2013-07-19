@@ -6,12 +6,13 @@ tests_SOURCES = \
   data.c \
   exception.c \
   functional.c \
+  go.c \
   memory.c \
   ptest.c \
   test.c
   
 tests_CPPFLAGS = -I$(top_srcdir)/tests
-tests_CFLAGS = -std=gnu99 -Wall -Werror -Wextra -Wno-unused -fnested-functions
+tests_CFLAGS = -std=gnu99 -Wall -Werror -Wextra -Wno-unused
 tests_LDFLAGS = -lCello
 
 TESTS = tests

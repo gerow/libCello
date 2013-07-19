@@ -37,5 +37,8 @@
 #include "Cello/Reference.h"
 #include "Cello/Pool.h"
 
+/* Threading */
+#include "Cello/Go.h"
+
 #endif
 
