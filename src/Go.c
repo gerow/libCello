@@ -27,5 +27,4 @@ void go(var f, var args){
   if (rc) {
     // maybe throw an error here...
   }
-  return 0;
 }

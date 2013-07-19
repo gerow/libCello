@@ -39,6 +39,7 @@
 
 /* Threading */
 #include "Cello/Go.h"
+#include "Cello/Channel.h"
 
 #endif
 

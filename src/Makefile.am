@@ -3,6 +3,7 @@ lib_LTLIBRARIES = libCello.la
 libCello_la_SOURCES = \
   Array.c \
   Bool.c \
+  Channel.c \
   Char.c \
   Dictionary.c \
   Exception.c \
@@ -32,6 +33,7 @@ pkgincludedir = $(includedir)/Cello
 pkginclude_HEADERS = \
   $(top_srcdir)/include/Array.h \
   $(top_srcdir)/include/Bool.h \
+  $(top_srcdir)/include/Channel.h \
   $(top_srcdir)/include/Char.h \
   $(top_srcdir)/include/Dictionary.h \
   $(top_srcdir)/include/Exception.h \
