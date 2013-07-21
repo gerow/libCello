@@ -57,6 +57,8 @@ void Channel_Push_Back(var self, var val) {
   if (empty_before) {
     pthread_cond_signal(&co->read_ready_cond);
   }
+
+  pthread_mutex_unlock(&co->mutex);
 }
 
 void Channel_Push_Front(var self, var val) {
@@ -82,6 +84,8 @@ var Channel_Pop_Back(var self) {
   if (full_before) {
     pthread_cond_signal(&co->write_ready_cond);
   }
+
+  pthread_mutex_unlock(&co->mutex);
 
   return out;
 }
