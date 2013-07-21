@@ -1,5 +1,6 @@
 # Basic
 *.log
+build
 
 # Autotools
 *.html
@@ -41,6 +42,5 @@ compile
 app.info
 coverage_report
 
-# Tests
-/tests/test.bin
-/tests/test.txt
+# VIM related
+.clang_complete

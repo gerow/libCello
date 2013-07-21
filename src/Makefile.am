@@ -56,4 +56,3 @@ pkginclude_HEADERS = \
   $(top_srcdir)/include/Tree.h \
   $(top_srcdir)/include/Type.h \
   $(top_srcdir)/include/Value.h
-  

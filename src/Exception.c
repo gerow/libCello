@@ -1,10 +1,10 @@
-#include "Exception.h"
+#include "Cello/Exception.h"
 
-#include "Type.h"
-#include "None.h"
-#include "File.h"
-#include "String.h"
-#include "Number.h"
+#include "Cello/Type.h"
+#include "Cello/None.h"
+#include "Cello/File.h"
+#include "Cello/String.h"
+#include "Cello/Number.h"
 
 #include <signal.h>
 
@@ -44,9 +44,9 @@ void Exception_Register_Signals(void) {
   signal(SIGTERM, Exception_Signal);
 }
 
-bool __exc_active = false;
-int __exc_depth = -1;
-jmp_buf __exc_buffers[__EXC_MAX_DEPTH];
+__thread bool __exc_active = false;
+__thread int __exc_depth = -1;
+__thread jmp_buf __exc_buffers[__EXC_MAX_DEPTH];
 
 local var __exc_obj = NULL;
 local bool __exc_msg_hook = false;
