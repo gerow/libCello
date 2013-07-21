@@ -3,11 +3,13 @@ FILE(GLOB
         ${PROJECT_SOURCE_DIR}/src/Array.c
         ${PROJECT_SOURCE_DIR}/src/Bool.c
         ${PROJECT_SOURCE_DIR}/src/Char.c
+        ${PROJECT_SOURCE_DIR}/src/Channel.c
         ${PROJECT_SOURCE_DIR}/src/Dictionary.c
         ${PROJECT_SOURCE_DIR}/src/Exception.c
         ${PROJECT_SOURCE_DIR}/src/File.c
         ${PROJECT_SOURCE_DIR}/src/Format.c
         ${PROJECT_SOURCE_DIR}/src/Function.c
+        ${PROJECT_SOURCE_DIR}/src/Go.c
         ${PROJECT_SOURCE_DIR}/src/Lambda.c
         ${PROJECT_SOURCE_DIR}/src/List.c
         ${PROJECT_SOURCE_DIR}/src/Map.c
@@ -25,6 +27,7 @@ FILE(GLOB
     CELLO_HEADERS
     ${PROJECT_SOURCE_DIR}/include/Cello/Array.h
     ${PROJECT_SOURCE_DIR}/include/Cello/Bool.h
+    ${PROJECT_SOURCE_DIR}/include/Cello/Channel.h
     ${PROJECT_SOURCE_DIR}/include/Cello/Char.h
     ${PROJECT_SOURCE_DIR}/include/Cello/Dictionary.h
     ${PROJECT_SOURCE_DIR}/include/Cello/Exception.h
@@ -32,6 +35,7 @@ FILE(GLOB
     ${PROJECT_SOURCE_DIR}/include/Cello/Format.h
     ${PROJECT_SOURCE_DIR}/include/Cello/Function.h
     ${PROJECT_SOURCE_DIR}/include/FunctionAutoCello/.h 
+    ${PROJECT_SOURCE_DIR}/include/Cello/Go.h
     ${PROJECT_SOURCE_DIR}/include/Cello/Lambda.h
     ${PROJECT_SOURCE_DIR}/include/Cello/LambdaCurry.h
     ${PROJECT_SOURCE_DIR}/include/Cello/List.h
@@ -52,6 +56,7 @@ IF(BUILD_SHARED_LIBS)
     ADD_LIBRARY(cello SHARED ${CELLO_SRC})
     SET_TARGET_PROPERTIES(cello PROPERTIES VERSION ${CELLO_VERSION_STRING})
     TARGET_LINK_LIBRARIES(cello m)
+    TARGET_LINK_LIBRARIES(cello pthread)
     INSTALL(TARGETS cello DESTINATION lib)
     
     SET(CELLO_LIBRARY_TARGET cello)
@@ -60,6 +65,7 @@ IF(BUILD_STATIC_LIBS)
     ADD_LIBRARY(cello-static STATIC ${CELLO_SRC})
     SET_TARGET_PROPERTIES(cello-static PROPERTIES VERSION ${CELLO_VERSION_STRING})
     TARGET_LINK_LIBRARIES(cello-static m)
+    TARGET_LINK_LIBRARIES(cello-static pthread)
     INSTALL(TARGETS cello-static DESTINATION lib)
     
     SET(CELLO_LIBRARY_TARGET cello-static)

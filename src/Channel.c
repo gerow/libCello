@@ -1,4 +1,4 @@
-#include "Channel.h"
+#include "Cello/Channel.h"
 
 var Channel = methods {
   methods_begin(Channel),

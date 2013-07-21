@@ -1,6 +1,6 @@
-#include "Go.h"
+#include "Cello/Go.h"
 
-#include "Function.h"
+#include "Cello/Function.h"
 
 #include <pthread.h>
 

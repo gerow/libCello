@@ -7,6 +7,7 @@ FILE(GLOB_RECURSE
         memory.c
         ptest.c
         test.c
+        go.c
     )
 
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
