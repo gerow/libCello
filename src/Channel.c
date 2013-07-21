@@ -36,7 +36,8 @@ var Channel_Delete(var self) {
   return self;
 }
 
-void Channel_Push_Back(var self, var val) {
+void Channel_Push(var self, var val) {
+  print("pushing into channel\n");
   ChannelData* co = cast(self, Channel);
 
   pthread_mutex_lock(&co->mutex);
@@ -61,13 +62,7 @@ void Channel_Push_Back(var self, var val) {
   pthread_mutex_unlock(&co->mutex);
 }
 
-void Channel_Push_Front(var self, var val) {
-}
-
-void Channel_Push_At(var self, var val, int index) {
-}
-
-var Channel_Pop_Back(var self) {
+var Channel_Pop(var self) {
   ChannelData* co = cast(self, Channel);
 
   pthread_mutex_lock(&co->mutex);
@@ -88,12 +83,4 @@ var Channel_Pop_Back(var self) {
   pthread_mutex_unlock(&co->mutex);
 
   return out;
-}
-
-var Channel_Pop_Front(var self) {
-  return NULL;
-}
-
-var Channel_Pop_At(var self, int index) {
-  return NULL;
 }

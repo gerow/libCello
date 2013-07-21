@@ -1,7 +1,7 @@
 /*
 ** == Go ==
 ** 
-** Go Style Goroutines
+** Go Style Routines
 **
 */
 
@@ -12,6 +12,8 @@
 #ifndef ChelloGo_h
 #define ChelloGo_h
 
-void go(var f, var args);
+#define go(x, ...) go_with_ptr(x, (var[]){ __VA_ARGS__, (var)-1 })
+void go_with_ptr(var f, var*);
+void go_with(var f, var args);
 
 #endif
